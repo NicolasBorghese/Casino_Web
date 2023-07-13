@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <title>Casino</title>
+
+    <!-- inserción de icono miniatura de la página web -->
+    <link rel="icon" type="image/x-icon" href="imagenes/iconMiniatura.svg">
+
+    <!-- Ruta a archivos css (principal style.css) -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/formularios.css" />
+    <link rel="stylesheet" type="text/css" href="css/CrearCuenta.css" />
+
+    <!-- Ruta a archivo js -->
+    <script type="text/javascript" src="funciones.js"></script>
+
+    <!-- Fuente 1 de google fonts (Press Start 2P)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!--------------------------------------- BANNER ---------------------------------------------->
+    <div id="banner"></div>
+
+    <!--------------------------------------- CABEZAL --------------------------------------------->
+    <div id="menuCabezal">
+    </div>
+
+    <!--------------------------------------- LOGO ------------------------------------------------>
+    <div id="logo">
+        <a href="index.html"><img src="imagenes/logo.gif"></a>
+    </div>
+
+    <!--------------------------------------- CONTENIDO ------------------------------------------->
+    <div id="contenido">
+
+        <!----------------------------------| INICIO CrearCuenta.HTML |---------------------------->
+        <div id="contenidoCrearCuenta">
+
+            <p class="encabezadoFormulario">Complete el siguiente formulario para crear su cuenta</p>
+            
+            <form id="formularioCrearCuenta">
+                <table>
+                    <tr>
+                        <td><p>Nombre de Usuario </p></td><td colspan="3"><input type="text" id="crearUsuario" class="llenarTexto" maxlength="16"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Contraseña </p></td><td colspan="3"><input type="password" id="crearContrasenia1"  class="llenarTexto"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Verificar Contraseña </p></td><td colspan="3"><input type="password" id="crearContrasenia2"  class="llenarTexto"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Direcci&oacute;n de email </p></td><td colspan="3"><input type="text" id="crearMail"  class="llenarTexto"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Fecha De Nacimiento </p></td>
+                        <td><input type="text" id="crearDia"  class="llenarFecha" placeholder="dd"></td>
+                        <td><input type="text" id="crearMes"  class="llenarFecha" placeholder="mm"></td>
+                        <td><input type="text" id="crearAnio"  class="llenarFecha" placeholder="aaaa"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Tel&eacute;fono </p></td><td colspan="3"><input type="text" id="crearTelefono"  class="llenarTexto"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><p>Deseo suscribirme a las novedades </p></td colspan="3"><td><input type="checkbox" id="crearSuscripcion" class="completarCheck"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><p>Acepto los t&eacute;rminos y condiciones </p></td colspan="3"><td><input type="checkbox" id="crearTerminos" class="completarCheck"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <ul id="pantallaErrorCrearCuenta" class="pantallaError">
+                                <!--
+                                    Espacio dedicado a los <li> que van a indicar
+                                    los resultados de las validaciones
+                                -->
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><input type="button" id="botonCrearCuenta" class="botonGrandeEnviar" value="CREAR CUENTA" onclick="crearCuenta()"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><a href="index.html">Haga click aqu&iacute; para volver al inicio</a></td>
+                    </tr>
+    
+                </table>
+            </form>
+        </div>
+        <!----------------------------------| FIN CrearCuenta.HTML |------------------------------->
+    </div>
+
+    <!--------------------------------------- PIE DE PÁGINA --------------------------------------->
+    <div id="pieDePagina">
+        <p>&copy; 2023 Nicol&aacute;s Borghese. Todos los derechos reservados.</p>
+        <!--
+        <ul>
+            <li><a href="#">Privacy policy</a>&nbsp;|&nbsp;</li>
+            <li><a href="#">Terms and Conditions</a>&nbsp;|&nbsp;</li>
+            <li><a href="#">Return Policy</a>&nbsp;|&nbsp;</li>
+            <li><a href="#">Credits</a></li>
+        </ul>
+        -->
+    </div>
+    <!--------------------------------------- FIN PÁGINA ------------------------------------------>
+</body>
+
+</html>

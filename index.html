@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <title>Casino</title>
+
+    <!-- inserción de icono miniatura de la página web -->
+    <link rel="icon" type="image/x-icon" href="imagenes/iconMiniatura.svg">
+
+    <!-- Ruta a archivos css (principal style.css) -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/formularios.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <!-- Ruta a archivo js -->
+    <script type="text/javascript" src="funciones.js"></script>
+
+    <!-- Fuente 1 de google fonts (Press Start 2P)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Casino Web"/>
+    <meta property="og:image" content="imagenes/logoMiniatura.png"/>
+    <meta property="og:description" content="TPF PEyLW" />
+
+</head>
+
+<body>
+    
+    <!--------------------------------------- BANNER ---------------------------------------------->
+    <div id="banner"></div>
+
+    <!--------------------------------------- CABEZAL --------------------------------------------->
+    <div id="menuCabezal"></div>
+
+    <!--------------------------------------- LOGO ------------------------------------------------>
+    <div id="logo">
+        <a href="index.html"><img src="imagenes/logo.gif"></a>
+    </div>
+
+    <!--------------------------------------- CONTENIDO ------------------------------------------->
+    <div id="contenido">
+    
+        <!----------------------------------| INICIO Index.HTML |---------------------------------->
+        <div id="contenidoIndex">
+        
+            <form id="formularioLogin">
+                <table>
+                    <tr>
+                        <td>
+                            <p class="encabezadoFormulario">Ingrese su usuario</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="usuarioLogin" maxlength="16">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="encabezadoFormulario">Ingrese su contraseña</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="password" id="contraLogin">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul id="pantallaErrorIndex" class="pantallaError">
+                                <!--
+                                    Espacio dedicado a los <li> que van a indicar
+                                    los resultados de las validaciones
+                                -->
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" id="botonLogueo" class="botonGrandeEnviar" value="ACCEDER" onclick="ingresarUsuarioPagina()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="crearCuenta.html">Si a&uacute;n no posee una cuenta registrese haciendo click aqu&iacute;</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+    
+        </div>
+        <!----------------------------------| FIN index.HTML |------------------------------------->
+    </div>
+    
+    <!--------------------------------------- PIE DE PÁGINA --------------------------------------->
+    
+    <div id="pieDePagina">
+        <p>&copy; 2023 Nicol&aacute;s Borghese. Todos los derechos reservados.</p>
+        <!--
+        <ul>
+            <li><a href="#">Privacy policy</a>&nbsp;|&nbsp;</li>
+            <li><a href="#">Terms and Conditions</a>&nbsp;|&nbsp;</li>
+            <li><a href="#">Return Policy</a>&nbsp;|&nbsp;</li>
+            <li><a href="#">Credits</a></li>
+        </ul>
+        -->
+    </div>
+    <!--------------------------------------- FIN PÁGINA ------------------------------------------>
+</body>
+
+</html>
