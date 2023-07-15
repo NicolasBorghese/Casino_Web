@@ -78,6 +78,16 @@ option {
     margin-bottom: 15px;
     font-size: 1.1em;
     list-style: none;
+
+}
+
+/*-------------------------------------------- input text error/exito ------------------------------*/
+.displayBackgroundError {
+    background-color: #f47575;
+}
+
+.displayBackgroundExito {
+    background-color: #9df475;
 }
 
 /*-------------------------------------------- links comunes en forms ------------------------------*/

@@ -62,8 +62,24 @@ function crearCuenta(){
     var elemMes = document.getElementById("crearMes");
     var elemAnio = document.getElementById("crearAnio");
     var elemTelefono = document.getElementById("crearTelefono");
+    var elemCheckSuscripcion = document.getElementById("crearSuscripcion");
     var elemCheckTerminos = document.getElementById("crearTerminos");
 
+    var colElementos = [];
+    colElementos.push(elemUsuario);
+    colElementos.push(elemContrasenia1);
+    colElementos.push(elemContrasenia2);
+    colElementos.push(elemMail);
+    colElementos.push(elemDia);
+    colElementos.push(elemMes);
+    colElementos.push(elemAnio);
+    colElementos.push(elemTelefono);
+    colElementos.push(elemCheckSuscripcion);
+    colElementos.push(elemCheckTerminos);
+
+    /*Limpio las clases asignadas a los campos del formulario en consultas previas*/
+    limpiarFormulario(colElementos);
+    
     /*Valido que todos los datos ingresados por el usuario sean correctos antes
     de crear el nuevo usuario*/
     var usuarioValido = validarUsuario(elemUsuario, pantallaError);
@@ -102,9 +118,23 @@ function crearCuenta(){
         //Cargo la colección actualizada de usuarios al localStorage
         localStorage.setItem("colUsuarios", JSON.stringify(colUsuarios));
 
-        limpiarFormularioCrearCuenta();
+        //Limpio el formulario completo
+        var formulario = document.getElementById("formularioCrearCuenta");
+        formulario.reset();
+        limpiarFormulario(colElementos);
     }
+}
 
+/**
+ * Recibe todos los elementos de un formulario para quitarle las clases que indican
+ * si hubo un error o si tuvo éxito el valor ingresado en cada campo.
+ * @param {*} colElementos
+ */
+function limpiarFormulario(colElementos){
+
+    for (var i = 0; i < colElementos.length; i++){
+        colElementos[i].classList.remove("displayBackgroundExito", "displayBackgroundError");
+    }
 }
 
 /*/=======================================================================================\*\
@@ -141,19 +171,19 @@ function validarUsuario(elemUsuario, pantallaError){
     if(exito){
         if(cadenaUsuario.length >= 3){
             if(cadenaUsuario.length <= 16){
-                elemUsuario.style.backgroundColor = "#9df475";
+                elemUsuario.classList.add("displayBackgroundExito");
             } else {
                 exito = false;
-                elemUsuario.style.backgroundColor = "#f47575";
+                elemUsuario.classList.add("displayBackgroundError");
                 pantallaError.innerHTML += "<li>El nombre de usuario no puede tener más de 16 carácteres</li>";
             }
         } else {
             exito = false;
-            elemUsuario.style.backgroundColor = "#f47575";
+            elemUsuario.classList.add("displayBackgroundError");
             pantallaError.innerHTML += "<li>El nombre de usuario debe tener 3 o más carácteres</li>";
         }
     } else {
-        elemUsuario.style.backgroundColor = "#f47575";
+        elemUsuario.classList.add("displayBackgroundError");
         pantallaError.innerHTML += "<li>El nombre de usuario ya se encuentra en uso</li>";
     }
 
@@ -176,8 +206,8 @@ function validarContrasenia(elemContra1, elemContra2, pantallaError){
     var exito = true;
 
     if(contra1.length >= 8 && contra1 == contra2){
-        elemContra1.style.backgroundColor = "#9df475";
-        elemContra2.style.backgroundColor = "#9df475";
+        elemContra1.classList.add("displayBackgroundExito");
+        elemContra2.classList.add("displayBackgroundExito");
 
     } else {
         var exito = false;
@@ -189,8 +219,8 @@ function validarContrasenia(elemContra1, elemContra2, pantallaError){
         if (contra1 != contra2){
             pantallaError.innerHTML += "<li>Las contraseñas ingresadas no coinciden</li>";
         }
-        elemContra1.style.backgroundColor = "#f47575";
-        elemContra2.style.backgroundColor = "#f47575";
+        elemContra1.classList.add("displayBackgroundError");
+        elemContra2.classList.add("displayBackgroundError");
     }
 
     return exito;
@@ -223,15 +253,16 @@ function validarMail(elemMail, pantallaError){
         const patronCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if(patronCorreo.test(cadenaMail)){
-            elemMail.style.backgroundColor = "#9df475";
+            elemMail.classList.add("displayBackgroundExito");
+
         } else {
             exito = false;
-            elemMail.style.backgroundColor = "#f47575";
+            elemMail.classList.add("displayBackgroundError");
             pantallaError.innerHTML += "<li>El mail ingresado no tiene un formato válido</li>";
         }
 
     } else {
-        elemMail.style.backgroundColor = "#f47575";
+        elemMail.classList.add("displayBackgroundError");
         pantallaError.innerHTML += "<li>El mail ingresado ya se encuentra registrado</li>";
     }
 
@@ -281,20 +312,20 @@ function validarFecha(elemDia, elemMes, elemAnio, pantallaError){
         if (exito){
 
             if((fechaActual - fechaIngresada)/31536000000 >= 18){
-                elemDia.style.backgroundColor = "#9df475";
-                elemMes.style.backgroundColor = "#9df475";
-                elemAnio.style.backgroundColor = "#9df475";
+                elemDia.classList.add("displayBackgroundExito");
+                elemMes.classList.add("displayBackgroundExito");
+                elemAnio.classList.add("displayBackgroundExito");
             } else {
                 exito = false;
-                elemDia.style.backgroundColor = "#f47575";
-                elemMes.style.backgroundColor = "#f47575";
-                elemAnio.style.backgroundColor = "#f47575";
+                elemDia.classList.add("displayBackgroundError");
+                elemMes.classList.add("displayBackgroundError");
+                elemAnio.classList.add("displayBackgroundError");
                 pantallaError.innerHTML += "<li>Debe ser mayor de edad para registrarse a este sitio</li>";
             }
         } else {
-            elemDia.style.backgroundColor = "#f47575";
-            elemMes.style.backgroundColor = "#f47575";
-            elemAnio.style.backgroundColor = "#f47575";
+            elemDia.classList.add("displayBackgroundError");
+            elemMes.classList.add("displayBackgroundError");
+            elemAnio.classList.add("displayBackgroundError");
             pantallaError.innerHTML += "<li>Formato de fecha inválido dd/mm/aaaa</li>";
         }
 
@@ -334,18 +365,18 @@ function validarTelefono(elemTelefono ,pantallaError){
 
     if (telefonoInt.toString().length != telefonoString.length || telefonoInt < 0){
         exito = false;
-        elemTelefono.style.backgroundColor = "#f47575";
+        elemTelefono.classList.add("displayBackgroundError");
         pantallaError.innerHTML += "<li>Los números de teléfono solo deben contener números</li>";
     }
 
     if(telefonoInt.toString().length < 7){
         exito = false;
-        elemTelefono.style.backgroundColor = "#f47575";
+        elemTelefono.classList.add("displayBackgroundError");
         pantallaError.innerHTML += "<li>Los números de teléfono deben tener al menos 7 dígitos</li>";
     }
 
     if (exito){
-        elemTelefono.style.backgroundColor = "#9df475";
+        elemTelefono.classList.add("displayBackgroundExito");
     }
 
     return exito;
@@ -370,45 +401,6 @@ function validarTerminos(elemCheckTerminos, pantallaError){
     return exito;
 }
 
-/**
- * CrearCuenta.html
-
- * Función que sirve para setear a cero todos los valores y cambios de estilo del formulario
- * correspondiente a la creación de cuenta, luego de una creación exitosa.
- */
-function limpiarFormularioCrearCuenta(){
-    var elemUsuario = document.getElementById("crearUsuario");
-    var elemContrasenia1 = document.getElementById("crearContrasenia1");
-    var elemContrasenia2 = document.getElementById("crearContrasenia2");
-    var elemMail = document.getElementById("crearMail");
-    var elemDia = document.getElementById("crearDia");
-    var elemMes = document.getElementById("crearMes");
-    var elemAnio = document.getElementById("crearAnio");
-    var elemTelefono = document.getElementById("crearTelefono");
-    var elemCheckSuscripcion = document.getElementById("crearSuscripcion");
-    var elemCheckCrearTerminos = document.getElementById("crearTerminos");
-
-    elemUsuario.style.backgroundColor = "white";
-    elemContrasenia1.style.backgroundColor = "white";
-    elemContrasenia2.style.backgroundColor = "white";
-    elemMail.style.backgroundColor = "white";
-    elemDia.style.backgroundColor = "white";
-    elemMes.style.backgroundColor = "white";
-    elemAnio.style.backgroundColor = "white";
-    elemTelefono.style.backgroundColor = "white";
-
-    elemUsuario.value = "";
-    elemContrasenia1.value = "";
-    elemContrasenia2.value = "";
-    elemMail.value = "";
-    elemDia.value = "";
-    elemMes.value = "";
-    elemAnio.value = "";
-    elemTelefono.value = "";
-    elemCheckSuscripcion.checked = false;
-    elemCheckCrearTerminos.checked = false;
-}
-
 /*/=======================================================================================\*\
 ||                               INGRESAR A LA PÁGINA                                      ||
 \*\=======================================================================================/*/
@@ -421,6 +413,10 @@ function limpiarFormularioCrearCuenta(){
 function ingresarUsuarioPagina(){
     var elemUsuarioLogin = document.getElementById("usuarioLogin");
     var elemContraLogin = document.getElementById("contraLogin");
+
+    //Quita los indicadores de error/éxito cada vez que se intenta ingresar
+    elemUsuarioLogin.classList.remove("displayBackgroundError", "displayBackgroundExito");
+    elemContraLogin.classList.remove("displayBackgroundError", "displayBackgroundExito");
 
     var pantallaError = document.getElementById("pantallaErrorIndex");
 
@@ -436,9 +432,12 @@ function ingresarUsuarioPagina(){
     while (!existeUsuario && i < colUsuarios.length){
         if(colUsuarios[i].usuario == usuarioLogin){
             existeUsuario = true;
+            elemUsuarioLogin.classList.add("displayBackgroundExito");
             if(colUsuarios[i].contrasenia == contraLogin){
                 puedeEntrar = true;
+                elemContraLogin.classList.add("displayBackgroundExito");
             } else {
+                elemContraLogin.classList.add("displayBackgroundError");
                 pantallaError.innerHTML = "<li>Contraseña incorrecta</li>";
             }
         }
@@ -446,6 +445,7 @@ function ingresarUsuarioPagina(){
     }
 
     if(!existeUsuario){
+        elemUsuarioLogin.classList.add("displayBackgroundError");
         pantallaError.innerHTML = "<li>Nombre de usuario no registrado</li>";
     } else if (puedeEntrar){
         pantallaError.innerHTML = "<li class=\"pantallaExito\">Ingresando...</li>";
@@ -488,6 +488,7 @@ function actualizarDatosCuenta(){
  */
 function cerrarSesion(){
     localStorage.setItem("usuarioActivo", JSON.stringify(null));
+    window.location.href = "index.html";
 }
 
 /**
@@ -709,13 +710,13 @@ function verificarDineroValidoParaCarga(elemMonto, pantallaError){
         var fechaCarga = ultimaCarga.getFullYear() +""+ (ultimaCarga.getMonth()+1) +""+ ultimaCarga.getDate();
 
         if(usuarioActivo.usuario == "admin" && informacionDePagoCargar == "admin"){
-            elemMonto.style.backgroundColor = "#9df475";
+            elemMonto.classList.add("displayBackgroundExito");
             exito = true;
 
         } else {
             if(fechaHoy != fechaCarga){
                 if(parseFloat(valorDinero) <= 5000){
-                    elemMonto.style.backgroundColor = "#9df475";
+                    elemMonto.classList.add("displayBackgroundExito");;
                     exito = true;
 
                     usuarioActivo.ultimaCarga = fechaActual;
@@ -723,12 +724,12 @@ function verificarDineroValidoParaCarga(elemMonto, pantallaError){
                     localStorage.setItem("usuarioActivo", JSON.stringify(usuarioActivo));
 
                 } else {
-                    elemMonto.style.backgroundColor = "#f47575";
+                    elemMonto.classList.add("displayBackgroundError");
                     pantallaError.innerHTML += "<li>El valor ingresado para monto excede el límite diario de carga de dinero (máx. $5000) </li>";
                 }
             } else {
                 if(parseFloat(valorDinero) + parseFloat(cargaDia) <= 5000){
-                    elemMonto.style.backgroundColor = "#9df475";
+                    elemMonto.classList.add("displayBackgroundExito");
                     exito = true;
 
                     usuarioActivo.cargaDia = parseFloat(valorDinero) + parseFloat(cargaDia);
@@ -740,7 +741,7 @@ function verificarDineroValidoParaCarga(elemMonto, pantallaError){
                     var horas = 23 - fechaActual.getHours();
                     var minutos = 60 - fechaActual.getMinutes();
 
-                    elemMonto.style.backgroundColor = "#f47575";
+                    elemMonto.classList.add("displayBackgroundError");
                     pantallaError.innerHTML += "<li>El valor ingresado para monto excede su límite diario, por hoy puede cargar $"+margen+"</li>";
                     pantallaError.innerHTML += "<li>Debe esperar "+horas+":"+minutos+" HS para que se reinicie el límite diario de carga de dinero</li>";
                 }
@@ -767,9 +768,9 @@ function verificarDineroValido(elemMonto, pantallaError){
 
     if(patronDinero.test(valorDinero) && valorDinero >= 0){
         exito = true;
-        elemMonto.style.backgroundColor = "#f47575";
+        elemMonto.classList.add("displayBackgroundExito");
     } else {
-        elemMonto.style.backgroundColor = "#f47575";
+        elemMonto.classList.add("displayBackgroundError");
         pantallaError.innerHTML += "<li>El valor ingresado para el monto no es válido</li>";
     }
 
@@ -862,10 +863,10 @@ function verificarPuedeRetirarSaldo(elemMontoRetirar, pantallaError){
     var saldoUsuario = usuarioActivo.saldo;
 
     if(saldoUsuario >= elemMontoRetirar.value){
-        elemMontoRetirar.style.backgroundColor = "#9df475";
+        elemMontoRetirar.classList.add("displayBackgroundExito");
         exito = true;
     } else {
-        elemMontoRetirar.style.backgroundColor = "#f47575";
+        elemMontoRetirar.classList.add("displayBackgroundError");
         pantallaError.innerHTML += "<li>El valor ingresado de monto para retirar excede el saldo de su cuenta</li>";
     }
     return exito;
