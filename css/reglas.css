@@ -28,3 +28,11 @@
     font-size: 1.5em;
     color:#ffda70;
 }
+
+.contenedorReglas dt{
+    margin-bottom: 15px;
+}
+
+.contenedorReglas li{
+    margin-bottom: 10px;
+}
