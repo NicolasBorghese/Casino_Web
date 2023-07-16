@@ -104,7 +104,6 @@
     box-sizing: border-box;
 
     float:left;
-
 }
 
 #palancaMaquina img {
@@ -265,8 +264,6 @@
 
     height: 67.5px;
 
-    margin-top: auto;
-    /*margin-bottom: auto;*/
     display:flex;
 
     position:absolute;
@@ -279,7 +276,7 @@
 
     /*padding-top: 39px;*/
 
-    padding-top: 58.5px;
+    padding-top: 60px;
 }
 
 #apuestaTragamonedas {
@@ -304,10 +301,12 @@
     /*margin-top: 36.5px;
     margin-left: 172.5px;*/
 
-    margin-top: 54.75px;
+    margin-top: 56.25px;
     margin-left: 258.75px;
 
     position:absolute;
+
+    box-sizing: border-box;
 }
 
 #resultadosMenuTragamonedas {
@@ -335,8 +334,10 @@
     /*margin-top: 36.5px;
     margin-left: 240px;*/
 
-    margin-top: 54.75px;
+    margin-top: 56.25px;
     margin-left: 360px;
 
     position:absolute;
+
+    box-sizing: border-box;
 }

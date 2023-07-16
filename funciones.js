@@ -462,6 +462,18 @@ function ingresarUsuarioPagina(){
 }
 
 /*/=======================================================================================\*\
+||                                    CERRAR SESIÓN                                        ||
+\*\=======================================================================================/*/
+
+/**
+ * Quita del localStorage al usuarioActivo
+ */
+function cerrarSesion(){
+    localStorage.setItem("usuarioActivo", JSON.stringify(null));
+    window.location.href = "index.html";
+}
+
+/*/=======================================================================================\*\
 ||                             ACTUALIZAR DATOS CUENTA                                     ||
 \*\=======================================================================================/*/
 
@@ -489,13 +501,9 @@ function actualizarDatosCuenta(){
     }
 }
 
-/**
- * Quita del localStorage al usuarioActivo
- */
-function cerrarSesion(){
-    localStorage.setItem("usuarioActivo", JSON.stringify(null));
-    window.location.href = "index.html";
-}
+/*/=======================================================================================\*\
+||                                    Perfil.html                                          ||
+\*\=======================================================================================/*/
 
 /**
  * Perfil.html
