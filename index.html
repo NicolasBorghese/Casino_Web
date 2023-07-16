@@ -31,77 +31,87 @@
 </head>
 
 <body>
-    
-    <!-- ____________________________________ BANNER ___________________________________________ -->
-    <div id="banner"></div>
+    <!-- ________________________________________ CONTENEDOR GENERAL _______________________________ -->
+    <div id="contenedorGeneral">
 
-    <!-- ____________________________________ CABEZAL __________________________________________ -->
-    <div id="menuCabezal"></div>
+        <!-- ____________________________________ BANNER ___________________________________________ -->
+        <div id="banner"></div>
 
-    <!-- ____________________________________ LOGO _____________________________________________ -->
-    <div id="logo">
-        <a href="index.html"><img src="imagenes/logo.gif" alt="logo casino"></a>
-    </div>
+        <!-- ____________________________________ CABEZAL __________________________________________ -->
+        <div id="menuCabezal"></div>
 
-    <!-- ____________________________________ CONTENIDO ________________________________________ -->
-    <div id="contenido">
-    
-        <!-- _______________________________| INICIO Index.HTML |_______________________________ -->
-        <div id="contenidoIndex">
-        
-            <form id="formularioLogin">
-                <table>
-                    <tr>
-                        <td>
-                            <p class="encabezadoFormulario">Ingrese su usuario</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" id="usuarioLogin" maxlength="16">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="encabezadoFormulario">Ingrese su contraseña</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="password" id="contraLogin">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul id="pantallaErrorIndex" class="pantallaError">
-                                <!--
-                                    Espacio dedicado a los <li> que van a indicar
-                                    los resultados de las validaciones
-                                -->
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="button" id="botonLogueo" class="botonGrandeEnviar" value="ACCEDER" onclick="ingresarUsuarioPagina()">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="crearCuenta.html">Si a&uacute;n no posee una cuenta registrese haciendo click aqu&iacute;</a>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-    
+        <!-- ____________________________________ LOGO _____________________________________________ -->
+        <div id="logo">
+            <a href="juegos.html">
+                <img src="imagenes/logo.gif" alt="Logo casino">
+            </a>
         </div>
 
-        <!-- _______________________________| FIN index.HTML |__________________________________ -->
+        <!-- ____________________________________ CONTENIDO ________________________________________ -->
+        <div id="contenido">
+        
+            <!-- _______________________________| INICIO Index.HTML |_______________________________ -->
+            <div id="contenidoIndex">
+            
+                <form id="formularioLogin">
+                    <table>
+                        <tr>
+                            <td>
+                                <p class="encabezadoFormulario">Ingrese su usuario</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" id="usuarioLogin" maxlength="16">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="encabezadoFormulario">Ingrese su contraseña</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="password" id="contraLogin">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul id="pantallaErrorIndex" class="pantallaError">
+                                    <!--
+                                        Espacio dedicado a los <li> que van a indicar
+                                        los resultados de las validaciones
+                                    -->
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="button" id="botonLogueo" class="botonGrandeEnviar" value="ACCEDER" onclick="ingresarUsuarioPagina()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="linkFormulario">
+                                    <a href="crearCuenta.html">
+                                        Si a&uacute;n no posee una cuenta registrese haciendo click aqu&iacute;
+                                    </a>
+                                </div>               
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+        
+            </div>
+            <!-- _______________________________| FIN index.HTML |__________________________________ -->
+
+        </div>
+    
     </div>
-    
-    <!-- ____________________________________ PIE DE PÁGINA ____________________________________ -->
-    
-    <div id="pieDePagina">
+    <!-- ________________________________________ FIN CONTENEDOR GENERAL ___________________________ -->
+
+    <!-- ________________________________________ PIE DE PÁGINA ____________________________________ -->
+    <footer id="pieDePagina">
         <p>&copy; 2023 Nicol&aacute;s Borghese</p>
         <!--
         <ul>
@@ -111,8 +121,8 @@
             <li><a href="#">Credits</a></li>
         </ul>
         -->
-    </div>
-    <!-- ____________________________________ FIN PÁGINA _______________________________________ -->
+    </footer>
+    <!-- ________________________________________ FIN PÁGINA _______________________________________ -->
 </body>
 
 </html>

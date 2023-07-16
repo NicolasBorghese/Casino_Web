@@ -86,14 +86,18 @@ option {
 
 /*-------------------------------------------- input text error/exito ------------------------------*/
 .displayBackgroundError {
-    background-color: #f47575;
+    background-color: #c27676;
 }
 
 .displayBackgroundExito {
-    background-color: #9df475;
+    background-color: #a0cf8a;
 }
 
 /*-------------------------------------------- links comunes en forms ------------------------------*/
+.linkFormulario {
+    text-align: center;
+}
+
 form a {
     font-size: 0.7em;
     color:#45b8b3;
