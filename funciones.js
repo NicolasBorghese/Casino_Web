@@ -125,6 +125,10 @@ function crearCuenta(){
     }
 }
 
+/*/=======================================================================================\*\
+||                                LIMPIAR FORMULARIOS                                      ||
+\*\=======================================================================================/*/
+
 /**
  * Recibe todos los elementos de un formulario para quitarle las clases que indican
  * si hubo un error o si tuvo éxito el valor ingresado en cada campo.
@@ -414,9 +418,11 @@ function ingresarUsuarioPagina(){
     var elemUsuarioLogin = document.getElementById("usuarioLogin");
     var elemContraLogin = document.getElementById("contraLogin");
 
-    //Quita los indicadores de error/éxito cada vez que se intenta ingresar
-    elemUsuarioLogin.classList.remove("displayBackgroundError", "displayBackgroundExito");
-    elemContraLogin.classList.remove("displayBackgroundError", "displayBackgroundExito");
+    var colElementos = [];
+    colElementos.push(elemUsuarioLogin);
+    colElementos.push(elemContraLogin);
+    /*Limpio las clases asignadas a los campos del formulario en consultas previas*/
+    limpiarFormulario(colElementos);
 
     var pantallaError = document.getElementById("pantallaErrorIndex");
 
@@ -537,8 +543,17 @@ function realizarCambiosDePerfil(){
     /*Aislo la sección donde se debe mostrar en el perfil los errores
     de los cambios no realizados*/
     var pantallaError = document.getElementById("pantallaErrorPerfil");
-
+    /*Se limpia lo que tenía antes la pantalla por si quedaron mensajes de error
+    preexistentes */
     pantallaError.innerHTML = "";
+
+    var colElementos = [];
+    colElementos.push(elemMailNuevo);
+    colElementos.push(elemTelefonoNuevo);
+    colElementos.push(elemContraNueva1);
+    colElementos.push(elemContraNueva2);
+    /*Limpio las clases asignadas a los campos del formulario en consultas previas*/
+    limpiarFormulario(colElementos);
     
     /*Si el usuario activa el boton de guardar cambios pero no se ingreso nada
     entonces no se validará nada, sinó realizará las validaciones correspondientes*/
@@ -597,38 +612,19 @@ function realizarCambiosDePerfil(){
             colUsuarios.push(usuarioActualizado);
             localStorage.setItem("usuarioActivo", JSON.stringify(usuarioActualizado));
             localStorage.setItem("colUsuarios", JSON.stringify(colUsuarios));
-            limpiarFormularioCambiosDePerfil();
+
+            var formulario = document.getElementById("formularioActualizarPerfil");
+            formulario.reset();
+            limpiarFormulario(colElementos);
+
             pantallaError.innerHTML = "<li class=\"pantallaExito\">Cambios realizados con éxito</li>";
             actualizarPerfilUsuario();
+
         } else {
             colUsuarios.push(usuarioActivo);
             localStorage.setItem("colUsuarios", JSON.stringify(colUsuarios));
         }
     }
-}
-
-/**
- * Perfil.html
-
- * Lee todos los elementos del formulario de cambios de perfil y los vuelve
- * a su estado original
- */
-function limpiarFormularioCambiosDePerfil(){
-
-    var elemMailNuevo = document.getElementById("cambiarMail");
-    var elemTelefonoNuevo = document.getElementById("cambiarTelefono");
-    var elemContraNueva1 = document.getElementById("cambiarContrasenia1");
-    var elemContraNueva2 = document.getElementById("cambiarContrasenia2");
-
-    elemMailNuevo.style.backgroundColor = "white";
-    elemTelefonoNuevo.style.backgroundColor = "white";
-    elemContraNueva1.style.backgroundColor = "white";
-    elemContraNueva2.style.backgroundColor = "white";
-
-    elemMailNuevo.value = "";
-    elemTelefonoNuevo.value = "";
-    elemContraNueva1.value = "";
-    elemContraNueva2.value = "";
 }
 
 /*/=======================================================================================\*\
@@ -643,12 +639,19 @@ function limpiarFormularioCambiosDePerfil(){
  */
 function cargarDineroCuenta(){
     var elemMontoCargar = document.getElementById("montoCargarDinero");
-    var pantallaError = document.getElementById("pantallaErrorCargarDinero");
-    var usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
+    var elemMedioDePago = document.getElementById("medioDePagoCargar");
+    var informacionPago = document.getElementById("informacionDePagoCargar");
 
-    /*Se limpia lo que tenía antes la pantalla por si quedaron mensajes de error
-    preexistentes */
+    var usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
+    
+    var pantallaError = document.getElementById("pantallaErrorCargarDinero");
     pantallaError.innerHTML = "";
+
+    var colElementos = [];
+    colElementos.push(elemMontoCargar);
+    colElementos.push(elemMedioDePago);
+    colElementos.push(informacionPago);
+    limpiarFormulario(colElementos);
 
     if (usuarioActivo != null){
 
@@ -675,7 +678,11 @@ function cargarDineroCuenta(){
                 }
                 i++;
             }
-            limpiarFormularioCargarDineroCuenta();
+
+            var formulario = document.getElementById("formularioCargarCuenta");
+            formulario.reset();
+            limpiarFormulario(colElementos);
+
             actualizarDatosCuenta();
             pantallaError.innerHTML = "<li class=\"pantallaExito\">Carga de dinero realizada con éxito</li>";
         }
@@ -724,6 +731,7 @@ function verificarDineroValidoParaCarga(elemMonto, pantallaError){
                     localStorage.setItem("usuarioActivo", JSON.stringify(usuarioActivo));
 
                 } else {
+                    elemMonto.classList.remove("displayBackgroundExito");
                     elemMonto.classList.add("displayBackgroundError");
                     pantallaError.innerHTML += "<li>El valor ingresado para monto excede el límite diario de carga de dinero (máx. $5000) </li>";
                 }
@@ -741,6 +749,7 @@ function verificarDineroValidoParaCarga(elemMonto, pantallaError){
                     var horas = 23 - fechaActual.getHours();
                     var minutos = 60 - fechaActual.getMinutes();
 
+                    elemMonto.classList.remove("displayBackgroundExito");
                     elemMonto.classList.add("displayBackgroundError");
                     pantallaError.innerHTML += "<li>El valor ingresado para monto excede su límite diario, por hoy puede cargar $"+margen+"</li>";
                     pantallaError.innerHTML += "<li>Debe esperar "+horas+":"+minutos+" HS para que se reinicie el límite diario de carga de dinero</li>";
@@ -778,27 +787,6 @@ function verificarDineroValido(elemMonto, pantallaError){
 }
 
 /**
- *  Cargar.html
-
- * Lee todos los elementos del formulario de cargar dinero a la cuenta y los vuelve
- * a su estado original
- */
-function limpiarFormularioCargarDineroCuenta(){
-
-    var elemMontoCargar = document.getElementById("montoCargarDinero");
-    elemMontoCargar.style.backgroundColor = "white";
-    elemMontoCargar.value = "";
-
-    /*Los select se pueden cambiar por el value de sus option*/
-    var elemMedioDePago = document.getElementById("medioDePagoCargar");
-    elemMedioDePago.value = "credito";
-
-    var informacionPago = document.getElementById("informacionDePagoCargar");
-    informacionPago.style.backgroundColor = "white";
-    informacionPago.value = "";
-}
-
-/**
  * Cargar.html
 
  * Lee el monto que se desea retirar, si es correcto se retirara el dinero de la cuenta
@@ -806,12 +794,17 @@ function limpiarFormularioCargarDineroCuenta(){
  */
 function retirarDineroCuenta(){
     var elemMontoRetirar = document.getElementById("montoRetirarDinero");
-    var pantallaError = document.getElementById("pantallaErrorRetirarDinero");
+    var elemCuentaRetirar = document.getElementById("cuentaRetiroDinero");
+    
     var usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
 
-    /*Se limpia lo que tenía antes la pantalla por si quedaron mensajes de error
-    preexistentes */
+    var pantallaError = document.getElementById("pantallaErrorRetirarDinero");
     pantallaError.innerHTML = "";
+
+    var colElementos = [];
+    colElementos.push(elemMontoRetirar);
+    colElementos.push(elemCuentaRetirar);
+    limpiarFormulario(colElementos);
 
     if (usuarioActivo != null){
         var esMontoValido = verificarDineroValido(elemMontoRetirar, pantallaError);
@@ -840,7 +833,10 @@ function retirarDineroCuenta(){
                     i++;
                 }
     
-                limpiarFormularioRetirarDineroCuenta();
+                var formulario = document.getElementById("formularioRetirarDinero");
+                formulario.reset();
+                limpiarFormulario(colElementos);
+
                 actualizarDatosCuenta();
                 pantallaError.innerHTML = "<li class=\"pantallaExito\">Retiro de dinero realizado con éxito</li>";
             }
@@ -866,58 +862,60 @@ function verificarPuedeRetirarSaldo(elemMontoRetirar, pantallaError){
         elemMontoRetirar.classList.add("displayBackgroundExito");
         exito = true;
     } else {
+        elemMontoRetirar.classList.remove("displayBackgroundExito");
         elemMontoRetirar.classList.add("displayBackgroundError");
         pantallaError.innerHTML += "<li>El valor ingresado de monto para retirar excede el saldo de su cuenta</li>";
     }
     return exito;
 }
 
-/**
- *  Cargar.html
-
- * Lee todos los elementos del formulario de cargar dinero a la cuenta y los vuelve
- * a su estado original
- */
-function limpiarFormularioRetirarDineroCuenta(){
-
-    var elemMontoRetirar = document.getElementById("montoRetirarDinero");
-    elemMontoRetirar.style.backgroundColor = "white";
-    elemMontoRetirar.value = "";
-
-    var elemCuentaRetirar = document.getElementById("cuentaRetiroDinero");
-    elemCuentaRetirar.style.backgroundColor = "white";
-    elemCuentaRetirar.value = "";
-}
-
 /*/=======================================================================================\*\
 ||                                       MENÚ JUEGOS                                       ||
 \*\=======================================================================================/*/
 
+/**
+ * Cambia la imagen de la ruleta en el menú de juegos al posar encima el mouse
+ */
 function overCambiarImgRuleta(){
     elemImg = document.getElementById("imgJuegosMenuRuleta");
     elemImg.src = "imagenes/imgJuegoRuleta2Resize.png"
 }
 
+/**
+ * Cambia la imagen de la ruleta en el menú de juegos al quitar de encima el mouse
+ */
 function outCambiarImgRuleta(){
     elemImg = document.getElementById("imgJuegosMenuRuleta");
     elemImg.src = "imagenes/imgJuegoRuleta1Resize.png"
 }
 
+/**
+ * Cambia la imagen del black jack en el menú de juegos al posar encima el mouse
+ */
 function overCambiarImgBlackJack(){
     elemImg = document.getElementById("imgJuegosMenuBlackJack");
     elemImg.src = "imagenes/imgJuegoBlackJack2Resize.png"
 }
 
+/**
+ * Cambia la imagen del black jack en el menú de juegos al quitar de encima el mouse
+ */
 function outCambiarImgBlackJack(){
     elemImg = document.getElementById("imgJuegosMenuBlackJack");
     elemImg.src = "imagenes/imgJuegoBlackJack1Resize.png"
 }
 
+/**
+ * Cambia la imagen del tragamonedas en el menú de juegos al posar encima el mouse
+ */
 function overCambiarImgTragamonedas(){
     elemImg = document.getElementById("imgJuegosMenuTragamonedas");
     elemImg.src = "imagenes/imgJuegoTragamonedas2Resize.png"
 }
 
+/**
+ * Cambia la imagen del tragamonedas en el menú de juegos al quitar de encima el mouse
+ */
 function outCambiarImgTragamonedas(){
     elemImg = document.getElementById("imgJuegosMenuTragamonedas");
     elemImg.src = "imagenes/imgJuegoTragamonedas1Resize.png"
@@ -930,7 +928,7 @@ function outCambiarImgTragamonedas(){
 /**
  * juegoTragamonedas.html
 
- * Función que activa el tragamonedas
+ * Función que resuelve una tirada del tragamonedas
  */
 function activarPalancaTragamonedas(){
 

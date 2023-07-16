@@ -21,6 +21,9 @@
     border-radius: 8px;
     border: 7px solid;
     padding-left: 10px;
+
+    /*<!DOCTYPE html> al utilizar esta etiqueta es necesario indicar que los bordes no excedan las cajas */
+    box-sizing: border-box;
 }
 
 /*Modificar el margin de un elemento en un table, afecta a los otros del mismo td */
