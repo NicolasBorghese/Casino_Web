@@ -59,7 +59,7 @@ Corresponde al juego del tragamonedas.
 Todos los juegos son funcionales y se encuentran 100% desarrollados con Javascript.<br>
 Todos los diseños de animaciones e imágenes se encuentran 100% desarrollados con Aseprite.
 
-### Contacto
+##
 
 [![Nicolás Borghese][linkedin-shield]][linkedin-url]
 
