@@ -62,7 +62,9 @@ Todos los diseños de animaciones e imágenes se encuentran 100% desarrollados c
 ##
 
 <div align="center">
+
 [![Nicolás Borghese][linkedin-shield]][linkedin-url]
+
 </div>
 
 <!-- MARKDOWN LINKS AND IMAGES -->
