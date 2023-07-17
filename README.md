@@ -21,42 +21,42 @@ El proyecto simula la página web de un casino que cuenta con un login y una sec
 
 ### Secciones de la página:
 
-1. Login (index.html)
+1. Login (index.html)<br>
 La primer página consistirá principalmente en un login con la opción de dirigirnos a otro sitio para 
 crear una cuenta si no contamos con una.
 
-2. Formulario para creación de cuenta (crearCuenta.html)
+2. Formulario para creación de cuenta (crearCuenta.html)<br>
 Esta página consta de un formulario para crear una cuenta.
 
-3. Juegos (juegos.html)
+3. Juegos (juegos.html)<br>
 Esta página corresponde a un menú principal que ya muestra un cabezal que nos permite movernos 
 a diferentes secciones y muestra los juegos que se pueden jugar. Las secciones del cabezal van a 
 ser: Juegos, Perfil, Cargar/ Retirar, Reglas, Opciones
 
-4. Perfil de usuario (perfil.html)
+4. Perfil de usuario (perfil.html)<br>
 Esta página muestra la información que tiene cargada de perfil el usuario y además permite cambiar algunos datos
 
-5. Cargar/Retirar (cargar.html)
+5. Cargar/Retirar (cargar.html)<br>
 Esta página simula que el usuario ingresa dinero a su cuenta para que este aparezca reflejado luego 
 al momento de jugar, o le permite retirar el que ya tiene.
 El dinero actual de la cuenta se verá reflejado en el saldo del usuario en la parte superior derecha, el cual irá variando a medida que se va jugando según los resultados de los juegos.
 
-6. Reglas (reglas.html)
+6. Reglas (reglas.html)<br>
 Muestra las reglas de los 3 juegos.
 
-7. Opciones (opciones.html)
+7. Opciones (opciones.html)<br>
 Permitirá al usuario hacer algunas modificaciones a la página a su gusto.
 
-8. Ruleta (juegoRuleta.html)
+8. Ruleta (juegoRuleta.html)<br>
 Corresponde al juego de la ruleta
 
-9. Black Jack (juegoBlackJack.html)
+9. Black Jack (juegoBlackJack.html)<br>
 Corresponde al juego de Black Jack
 
-10. Tragamonedas (juegoTragamonedas.html)
+10. Tragamonedas (juegoTragamonedas.html)<br>
 Corresponde al juego del tragamonedas.
 
-Todos los juegos son funcionales y se encuentran 100% desarrollados con Javascript.
+Todos los juegos son funcionales y se encuentran 100% desarrollados con Javascript.<br>
 Todos los diseños de animaciones e imágenes se encuentran 100% desarrollados con Aseprite.
 
 ### Contacto
