@@ -405,6 +405,31 @@ function validarTerminos(elemCheckTerminos, pantallaError){
     return exito;
 }
 
+/**
+ * @param {*} elemMonto
+ * Elemento que contiene los valores ingresados por el usuario a validar.
+ * @param {*} pantallaError
+ * Sección dentro de la página donde se imprimirá el error.
+ * @returns boolean
+ */
+function verificarDineroValido(elemMonto, pantallaError){
+
+    var valorDinero = elemMonto.value;
+    var exito = false;
+
+    const patronDinero = /^-?\d+(\.\d+)?$/;
+
+    if(patronDinero.test(valorDinero) && valorDinero >= 0){
+        exito = true;
+        elemMonto.classList.add("displayBackgroundExito");
+    } else {
+        elemMonto.classList.add("displayBackgroundError");
+        pantallaError.innerHTML += "<li>El valor ingresado para el monto no es válido</li>";
+    }
+
+    return exito;
+}
+
 /*/=======================================================================================\*\
 ||                               INGRESAR A LA PÁGINA                                      ||
 \*\=======================================================================================/*/
@@ -764,31 +789,6 @@ function verificarDineroValidoParaCarga(elemMonto, pantallaError){
                 }
             }
         }
-    }
-
-    return exito;
-}
-
-/**
- * @param {*} elemMonto
- * Elemento que contiene los valores ingresados por el usuario a validar.
- * @param {*} pantallaError
- * Sección dentro de la página donde se imprimirá el error.
- * @returns boolean
- */
-function verificarDineroValido(elemMonto, pantallaError){
-
-    var valorDinero = elemMonto.value;
-    var exito = false;
-
-    const patronDinero = /^-?\d+(\.\d+)?$/;
-
-    if(patronDinero.test(valorDinero) && valorDinero >= 0){
-        exito = true;
-        elemMonto.classList.add("displayBackgroundExito");
-    } else {
-        elemMonto.classList.add("displayBackgroundError");
-        pantallaError.innerHTML += "<li>El valor ingresado para el monto no es válido</li>";
     }
 
     return exito;
