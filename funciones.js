@@ -886,7 +886,7 @@ function verificarPuedeRetirarSaldo(elemMontoRetirar, pantallaError){
  */
 function overCambiarImgRuleta(){
     elemImg = document.getElementById("imgJuegosMenuRuleta");
-    elemImg.src = "imagenes/imgJuegoRuleta2Resize.png"
+    elemImg.src = "imagenes/imgJuegos/imgJuegoRuleta2Resize.png"
 }
 
 /**
@@ -894,7 +894,7 @@ function overCambiarImgRuleta(){
  */
 function outCambiarImgRuleta(){
     elemImg = document.getElementById("imgJuegosMenuRuleta");
-    elemImg.src = "imagenes/imgJuegoRuleta1Resize.png"
+    elemImg.src = "imagenes/imgJuegos/imgJuegoRuleta1Resize.png"
 }
 
 /**
@@ -902,7 +902,7 @@ function outCambiarImgRuleta(){
  */
 function overCambiarImgBlackJack(){
     elemImg = document.getElementById("imgJuegosMenuBlackJack");
-    elemImg.src = "imagenes/imgJuegoBlackJack2Resize.png"
+    elemImg.src = "imagenes/imgJuegos/imgJuegoBlackJack2Resize.png"
 }
 
 /**
@@ -910,7 +910,7 @@ function overCambiarImgBlackJack(){
  */
 function outCambiarImgBlackJack(){
     elemImg = document.getElementById("imgJuegosMenuBlackJack");
-    elemImg.src = "imagenes/imgJuegoBlackJack1Resize.png"
+    elemImg.src = "imagenes/imgJuegos/imgJuegoBlackJack1Resize.png"
 }
 
 /**
@@ -918,7 +918,7 @@ function outCambiarImgBlackJack(){
  */
 function overCambiarImgTragamonedas(){
     elemImg = document.getElementById("imgJuegosMenuTragamonedas");
-    elemImg.src = "imagenes/imgJuegoTragamonedas2Resize.png"
+    elemImg.src = "imagenes/imgJuegos/imgJuegoTragamonedas2Resize.png"
 }
 
 /**
@@ -926,7 +926,7 @@ function overCambiarImgTragamonedas(){
  */
 function outCambiarImgTragamonedas(){
     elemImg = document.getElementById("imgJuegosMenuTragamonedas");
-    elemImg.src = "imagenes/imgJuegoTragamonedas1Resize.png"
+    elemImg.src = "imagenes/imgJuegos/imgJuegoTragamonedas1Resize.png"
 }
 
 /*/=======================================================================================\*\
@@ -948,12 +948,12 @@ function activarPalancaTragamonedas(){
     elemPalanca.onclick = null;
 
     //Se activa el gif de movimiento de la palanca
-    elemImgPalanca.src = "imagenes/palancaTirar.gif";
+    elemImgPalanca.src = "imagenes/imgJuegoTragamonedas/palancaTirar.gif";
 
     /*Se quita el gif de movimiento de la palanca luego de unos segundos volviendo a insertar
     la imágen estática de la misma*/
     setTimeout(function() {
-        elemImgPalanca.src = "imagenes/palancaEstatica.png";
+        elemImgPalanca.src = "imagenes/imgJuegoTragamonedas/palancaEstatica.png";
     }, 760);
 
     /*Vuelve a colocar la función de activar la palanca luego de resolver la jugada*/
@@ -1009,75 +1009,75 @@ function activarPalancaTragamonedas(){
 
             if(rodilloActual1 != null){
                 setTimeout(function() {
-                    display1.src = "imagenes/rodillo"+rodilloActual1+"Saliendo.gif";
+                    display1.src = "imagenes/imgJuegoTragamonedas/rodillo"+rodilloActual1+"Saliendo.gif";
                 }, 600);
             } else {
                 setTimeout(function() {
-                    display1.src = "imagenes/rodillo8Saliendo.gif";
+                    display1.src = "imagenes/imgJuegoTragamonedas/rodillo8Saliendo.gif";
                 }, 600);
             }
 
             /*Salen los valores del rodillo actual*/
             if(rodilloActual2 != null){
                 setTimeout(function() {
-                    display2.src = "imagenes/rodillo"+rodilloActual2+"Saliendo.gif";
+                    display2.src = "imagenes/imgJuegoTragamonedas/rodillo"+rodilloActual2+"Saliendo.gif";
                 }, 800);
             } else {
                 setTimeout(function() {
-                    display2.src = "imagenes/rodillo8Saliendo.gif";
+                    display2.src = "imagenes/imgJuegoTragamonedas/rodillo8Saliendo.gif";
                 }, 800);
             }
 
             if(rodilloActual3 != null){
                 setTimeout(function() {
-                    display3.src = "imagenes/rodillo"+rodilloActual3+"Saliendo.gif";
+                    display3.src = "imagenes/imgJuegoTragamonedas/rodillo"+rodilloActual3+"Saliendo.gif";
                 }, 1000);
             } else {
                 setTimeout(function() {
-                    display3.src = "imagenes/rodillo8Saliendo.gif";
+                    display3.src = "imagenes/imgJuegoTragamonedas/rodillo8Saliendo.gif";
                 }, 1000);
             }
 
             /*Giran los rodillos*/
             setTimeout(function() {
-                display1.src = "imagenes/rodillo00Girando.gif";
+                display1.src = "imagenes/imgJuegoTragamonedas/rodillo00Girando.gif";
             }, 1000);
 
             setTimeout(function() {
-                display2.src = "imagenes/rodillo00Girando.gif";
+                display2.src = "imagenes/imgJuegoTragamonedas/rodillo00Girando.gif";
             }, 1200);
 
             setTimeout(function() {
-                display3.src = "imagenes/rodillo00Girando.gif";
+                display3.src = "imagenes/imgJuegoTragamonedas/rodillo00Girando.gif";
             }, 1400);
 
 
             /*Entran los valores nuevos de los rodillos*/
             setTimeout(function() {
-                display1.src = "imagenes/rodillo"+valor1+"Entrando.gif";
+                display1.src = "imagenes/imgJuegoTragamonedas/rodillo"+valor1+"Entrando.gif";
             }, 1640);
 
             setTimeout(function() {
-                display2.src = "imagenes/rodillo"+valor2+"Entrando.gif";
+                display2.src = "imagenes/imgJuegoTragamonedas/rodillo"+valor2+"Entrando.gif";
             }, 1840);
 
             setTimeout(function() {
-                display3.src = "imagenes/rodillo"+valor3+"Entrando.gif";
+                display3.src = "imagenes/imgJuegoTragamonedas/rodillo"+valor3+"Entrando.gif";
             }, 2040);
             
             /*Se quedan estáticos finalmente los valores nuevos de los rodillos*/
             setTimeout(function() {
-                display1.src = "imagenes/rodillo"+valor1+".png";
+                display1.src = "imagenes/imgJuegoTragamonedas/rodillo"+valor1+".png";
                 localStorage.setItem("rodillo1", JSON.stringify(valor1));
             }, 2200);
 
             setTimeout(function() {
-                display2.src = "imagenes/rodillo"+valor2+".png";
+                display2.src = "imagenes/imgJuegoTragamonedas/rodillo"+valor2+".png";
                 localStorage.setItem("rodillo2", JSON.stringify(valor2));
             }, 2400);
 
             setTimeout(function() {
-                display3.src = "imagenes/rodillo"+valor3+".png";
+                display3.src = "imagenes/imgJuegoTragamonedas/rodillo"+valor3+".png";
                 localStorage.setItem("rodillo3", JSON.stringify(valor3));
             }, 2600);
 
