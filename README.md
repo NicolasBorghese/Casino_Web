@@ -17,7 +17,7 @@
 Este proyecto corresponde al trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura en Desarrollo Web de la UNCO.
 
 ### Resumen
-El proyecto simula la página web de un casino que cuenta con un login y una sección para crearse una cuenta. Una vez logueado, el usuario accede a un menú que permite elegir entre 3 juegos , una ruleta, un Black Jack y un tragamonedas *(actualmente solo se encuentra desarrollado el tragamonedas)* . También cuenta con una barra de navegación que permite dirigirse a distintas secciones y una pequeña sección que muestra el nombre de usuario logueado y el saldo.
+El proyecto simula la página web de un casino que cuenta con un login y una sección para crearse una cuenta. Una vez logueado, el usuario accede a un menú que permite elegir entre 3 juegos , una ruleta, un Black Jack y un tragamonedas <b>*(actualmente solo se encuentra finalizado el tragamonedas)*</b> . También cuenta con una barra de navegación que permite dirigirse a distintas secciones y una pequeña sección que muestra el nombre de usuario logueado y el saldo.
 
 ### Secciones de la página:
 
@@ -54,7 +54,7 @@ Corresponde al juego de la ruleta (en desarrollo)
 Corresponde al juego de Black Jack (en desarrollo)
 
 10. Tragamonedas (juegoTragamonedas.html)<br>
-Corresponde al juego del tragamonedas. *(COMPLETO)*
+Corresponde al juego del tragamonedas. <b>*(COMPLETO)*</b>
 
 Las funcionalidades del tragamonedas se encuentran 100% desarrolladas con Javascript.<br>
 Todos los diseños de animaciones e imágenes se encuentran 100% desarrollados con Aseprite.
