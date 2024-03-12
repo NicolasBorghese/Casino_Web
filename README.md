@@ -14,10 +14,10 @@
 
 ## Descripción
 
-Este proyecto inicia como un trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura en Desarrollo Web de la UNCO.
+Este proyecto corresponde al trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura en Desarrollo Web de la UNCO.
 
 ### Resumen
-El proyecto simula la página web de un casino que cuenta con un login y una sección para crearse una cuenta. Una vez logueado, el usuario accede a un menú que permite elegir entre 3 juegos , una ruleta, un Black Jack y un tragamonedas que son 100% funcionales. También cuenta con un cabezal que permite dirigirse a distintas secciones y una pequeña sección que muestra el nombre de usuario logueado y el saldo.
+El proyecto simula la página web de un casino que cuenta con un login y una sección para crearse una cuenta. Una vez logueado, el usuario accede a un menú que permite elegir entre 3 juegos , una ruleta, un Black Jack y un tragamonedas *(actualmente solo se encuentra desarrollado el tragamonedas)* . También cuenta con una barra de navegación que permite dirigirse a distintas secciones y una pequeña sección que muestra el nombre de usuario logueado y el saldo.
 
 ### Secciones de la página:
 
@@ -48,15 +48,15 @@ Muestra las reglas de los 3 juegos.
 Permitirá al usuario hacer algunas modificaciones a la página a su gusto.
 
 8. Ruleta (juegoRuleta.html)<br>
-Corresponde al juego de la ruleta
+Corresponde al juego de la ruleta (en desarrollo)
 
 9. Black Jack (juegoBlackJack.html)<br>
-Corresponde al juego de Black Jack
+Corresponde al juego de Black Jack (en desarrollo)
 
 10. Tragamonedas (juegoTragamonedas.html)<br>
-Corresponde al juego del tragamonedas.
+Corresponde al juego del tragamonedas. *(COMPLETO)*
 
-Todos los juegos son funcionales y se encuentran 100% desarrollados con Javascript.<br>
+Las funcionalidades del tragamonedas se encuentran 100% desarrolladas con Javascript.<br>
 Todos los diseños de animaciones e imágenes se encuentran 100% desarrollados con Aseprite.
 
 ##
