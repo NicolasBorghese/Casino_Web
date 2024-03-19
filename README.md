@@ -7,7 +7,13 @@
 
 <div align="center">
     <a href="https://nicolasborghese.github.io/Casino_Web/">
-        <img src="imagenes//imgGeneral/logo.gif" alt="Logo casino">
+        <img src="imagenes/imgGeneral/logo.gif">
+    </a>
+</div>
+
+<div align="center">
+    <a href="https://nicolasborghese.github.io/Casino_Web/">
+        <img src="imagenes/imgGeneral/logoMiniatura.png">
     </a>
 </div>
 
