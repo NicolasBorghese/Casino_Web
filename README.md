@@ -6,14 +6,14 @@
     </div>
     © 2023 Nicolás Borghese
 
-# <a href="https://nicolasborghese.github.io/Casino_Web/">**Link a Casino Web**</a>
+# <a href="https://nicolasborghese.github.io/Casino_Web/">***Link a Casino Web***</a>
 
 </div>
 
 ## Resumen
 Este proyecto corresponde a mi trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura Universitaria en Desarrollo Web de la UNCO.
 
-## Desarrollado con
+### Desarrollado con
 
 - [![HTML][html-shield]][html-url]
 - [![CSS][css-shield]][css-url]
