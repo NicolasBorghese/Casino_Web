@@ -89,7 +89,7 @@ Todos los diseños de animaciones e imágenes se encuentran 100% desarrollados c
 
 <div align="center">
 
-[![Nicolás Borghese][linkedin-shield]][linkedin-url]
+<!--[![Nicolás Borghese][linkedin-shield]][linkedin-url]-->
 
 </div>
 
@@ -107,5 +107,5 @@ Todos los diseños de animaciones e imágenes se encuentran 100% desarrollados c
 [aseprite-shield]: https://img.shields.io/badge/Aseprite-white?style=for-the-badge&logo=Aseprite
 [aseprite-url]: https://www.aseprite.org/
 
-<!--[linkedin-shield]: https://img.shields.io/badge/Nicol%C3%A1s%20Borghese-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white
-[linkedin-url]: https://www.linkedin.com/in/nicolas-borghese/-->
+[linkedin-shield]: https://img.shields.io/badge/Nicol%C3%A1s%20Borghese-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white
+[linkedin-url]: https://www.linkedin.com/in/nicolas-borghese/

@@ -672,8 +672,8 @@ function realizarCambiosDePerfil(){
  */
 function cargarDineroCuenta(){
     var elemMontoCargar = document.getElementById("montoCargarDinero");
-    var elemMedioDePago = document.getElementById("medioDePagoCargar");
-    var informacionPago = document.getElementById("informacionDePagoCargar");
+    //var elemMedioDePago = document.getElementById("medioDePagoCargar");
+    //var informacionPago = document.getElementById("informacionDePagoCargar");
 
     var usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
     
@@ -682,8 +682,8 @@ function cargarDineroCuenta(){
 
     var colElementos = [];
     colElementos.push(elemMontoCargar);
-    colElementos.push(elemMedioDePago);
-    colElementos.push(informacionPago);
+    //colElementos.push(elemMedioDePago);
+    //colElementos.push(informacionPago);
     limpiarFormulario(colElementos);
 
     if (usuarioActivo != null){
@@ -802,7 +802,7 @@ function verificarDineroValidoParaCarga(elemMonto, pantallaError){
  */
 function retirarDineroCuenta(){
     var elemMontoRetirar = document.getElementById("montoRetirarDinero");
-    var elemCuentaRetirar = document.getElementById("cuentaRetiroDinero");
+    //var elemCuentaRetirar = document.getElementById("cuentaRetiroDinero");
     
     var usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
 
@@ -811,7 +811,7 @@ function retirarDineroCuenta(){
 
     var colElementos = [];
     colElementos.push(elemMontoRetirar);
-    colElementos.push(elemCuentaRetirar);
+    //colElementos.push(elemCuentaRetirar);
     limpiarFormulario(colElementos);
 
     if (usuarioActivo != null){
