@@ -10,7 +10,9 @@
 
 </div>
 
-<h2>Resumen</h2>
+---
+
+<h3>Resumen</h3>
 
 Este proyecto corresponde a mi trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura Universitaria en Desarrollo Web de la UNCO.<br>
 
