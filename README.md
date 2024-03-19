@@ -5,6 +5,12 @@
 
 </div>
 
+<div align="center">
+    <a href="https://nicolasborghese.github.io/Casino_Web/">
+        <img src="imagenes//imgGeneral/logo.gif" alt="Logo casino">
+    </a>
+</div>
+
 ## Desarrollado con
 
 - [![HTML][html-shield]][html-url]
