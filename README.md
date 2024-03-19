@@ -15,8 +15,13 @@
 Este proyecto corresponde a mi trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura Universitaria en Desarrollo Web de la UNCO.<br>
 
 Para acceder al sitio sin crear una cuenta nueva:<br>
-<b>Usuario: admin</b><br>
-<b>Contraseña: admin</b>
+
+<div align="center">
+    <b>Usuario: admin</b><br>
+    <b>Contraseña: admin</b>
+</div>
+
+---
 
 ### Desarrollado con
 
