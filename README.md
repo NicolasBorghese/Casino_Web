@@ -1,13 +1,12 @@
 <div align="center">
     <div>
-        <img src="imagenes/imgGeneral/logoMiniatura.png">
+        <a href="https://nicolasborghese.github.io/Casino_Web/">
+            <img src="imagenes/imgGeneral/logoMiniatura.png">
+        </a>
     </div>
     © 2023 Nicolás Borghese
 
- <h1><u><a href="https://nicolasborghese.github.io/Casino_Web/">**Link a Casino Web**</a></u></h1>
- <h1><u><a href="https://nicolasborghese.github.io/Casino_Web/">__Link a Casino Web__</a></u></h1>
- **Link a Casino Web**
- __Link a Casino Web__
+ <h1><a href="https://nicolasborghese.github.io/Casino_Web/">Link a Casino Web</a></h1>
 </div>
 
 ## Resumen
