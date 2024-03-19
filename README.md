@@ -4,7 +4,10 @@
     </div>
     © 2023 Nicolás Borghese
 
- <h1><u><a href="https://nicolasborghese.github.io/Casino_Web/">Link a Casino Web</a></u></h1>
+ <h1><u><a href="https://nicolasborghese.github.io/Casino_Web/">**Link a Casino Web**</a></u></h1>
+ <h1><u><a href="https://nicolasborghese.github.io/Casino_Web/">__Link a Casino Web__</a></u></h1>
+ **Link a Casino Web**
+ __Link a Casino Web__
 </div>
 
 ## Resumen
