@@ -1,21 +1,15 @@
 <div align="center">
-© 2023 Nicolás Borghese
-
-# <a href="https://nicolasborghese.github.io/Casino_Web/">Casino Web</a>
-
-</div>
-
-<div align="center" style="border-radius: 10px; overflow: hidden;">
-    <a href="https://nicolasborghese.github.io/Casino_Web/">
-        <img src="imagenes/imgGeneral/logo.gif"/>
-    </a>
-</div>
-
-<div align="center" style="border-radius: 10px; overflow: hidden;">
     <a href="https://nicolasborghese.github.io/Casino_Web/">
         <img src="imagenes/imgGeneral/logoMiniatura.png">
     </a>
+    © 2023 Nicolás Borghese
+
+# <a href="https://nicolasborghese.github.io/Casino_Web/"><u>Link a Casino Web</u></a>
+
 </div>
+
+## Resumen
+Este proyecto corresponde a mi trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura Universitaria en Desarrollo Web de la UNCO.
 
 ## Desarrollado con
 
@@ -24,11 +18,7 @@
 - [![JavaScript][javascript-shield]][javascript-url]
 - [![Aseprite][aseprite-shield]][aseprite-url]
 
-## Descripción
-
-Este proyecto corresponde al trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura en Desarrollo Web de la UNCO.
-
-### Resumen
+### Descripción
 El proyecto simula la página web de un casino que cuenta con un login y una sección para crearse una cuenta. Una vez logueado, el usuario accede a un menú que permite elegir entre 3 juegos , una ruleta, un Black Jack y un tragamonedas <b>*(actualmente solo se encuentra finalizado el tragamonedas)*</b> . También cuenta con una barra de navegación que permite dirigirse a distintas secciones y una pequeña sección que muestra el nombre de usuario logueado y el saldo.
 
 ### Secciones de la página:

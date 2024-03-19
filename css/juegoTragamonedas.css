@@ -1,12 +1,12 @@
 /*----------------------------------------- contenido ----------------------------------------*/
 /* <div> principal*/
 #contenido {
-    /*border: solid 10px black;*/
-    border-radius: 10px;
+    /*border: solid 10px black;
+    border-radius: 10px;*/
     
     /*width: 960px;
-    height: 720px;*/
-    /*padding-left: 240px;*/
+    height: 720px;
+    padding-left: 240px;*/
 
     /*width: 480px;
     height: 360px;
@@ -16,14 +16,14 @@
     height: 540px;
     padding-left: 180px;
 
-    margin-left:auto;
+    margin-left: auto;
     margin-right: auto;
 
     margin-bottom: 40px;
 }
 
 /*----------------------------------------- CONTENIDO TRAGAMONEDAS ---------------------------*/
-#contenidoTragamonedas {
+#contenidoCajaSupMasPalanca {
 
     /*Tamaño y borde especificados*/
     /*border: solid 10px black;*/
@@ -35,8 +35,8 @@
     /*width: 480px;
     height: 240px;*/
 
-    width: 720;
-    height: 360;
+    width: 720px;
+    height: 360px;
 
     /*Centro el elemento según sus dimensiones en el medio*/
     margin-left: auto;
@@ -50,11 +50,11 @@
     display: flex;
 }
 
-#contenido #maquinaTragamonedas {
+#cajaSuperior {
     /*Tamaño y borde especificados*/
     /*border: solid 10px;*/
 
-    /*background-image: url(../imagenes/maquinaTragamonedas.png);*/
+    /*background-image: url(../imagenes/imgJuegoTragamonedas/cajaSuperior.png);*/
 
     /*border-radius: 10px;*/
 
@@ -80,15 +80,22 @@
     display: flex;
 
     justify-content: space-between;
+
+    
 }
 
-#contenido #palancaMaquina {
+#cajaSuperiorImg {
+    z-index: 2;
+}
+
+#palancaMaquina {
     /*Tamaño y borde especificados*/
     /*border: solid 10px red;*/
+    /*border-radius: 10px;*/
 
     /*background-image: url(../imagenes/TragamonedasPalanca.png);*/
 
-    border-radius: 10px;
+    
 
     /*width: 240px;
     height: 480px;*/
@@ -124,8 +131,10 @@
     /*width: 75px;
     height: 165px;*/
 
-    width: 112.5px;
-    height: 247.5px;
+    /*width: 112.5px; último utilizado*/
+    /*height: 247.5px; último utilizado*/
+    width: 130px;
+    height: 249px;
 
     float:left;
     margin-top: auto;
@@ -138,32 +147,43 @@
     /*margin-left: 30px;
     margin-top: 37.5px;*/
 
-    margin-left: 45px;
-    margin-top: 56.25px;
+    /*margin-left: 45px; último utilizado*/
+    /*margin-top: 56.25px; último utilizado*/
+    margin-left: 44px;
+    margin-top: 56px;
+    z-index: 1;
 }
 
 #displayMaquina02 {
     /*margin-left: 142.5px;
     margin-top: 37.5px;*/
 
-    margin-left: 213.75px;
-    margin-top: 56.25px;
+    /*margin-left: 213.75px; último utilizado*/
+    /*margin-top: 56.25px; último utilizado*/
+    margin-left: 213px;
+    margin-top: 56px;
+    z-index: 1;
 }
 
 #displayMaquina03 {
     /*margin-left: 255px;
     margin-top: 37.5px;*/
 
-    margin-left: 382.5px;
-    margin-top: 56.25px;
+    /*margin-left: 382.5px; último utilizado*/
+    /*margin-top: 56.25px; último utilizado*/
+    margin-left: 382px;
+    margin-top: 56px;
+    z-index: 1;
 }
 
 .displayMaquina img {
     /*width: 75px;
     height: 165px;*/
 
-    width: 112.5px;
-    height: 247.5px;
+    /*width: 112.5px; ultimo utilizado
+    height: 247.5px; ultimo utilizado*/
+    width: 114px;
+    height: 249px;
 }
 
 /*----------------------------------------- MENU TRAGAMONEDAS --------------------------------*/
