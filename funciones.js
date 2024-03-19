@@ -739,7 +739,7 @@ function verificarDineroValidoParaCarga(elemMonto, pantallaError){
     if(esDineroValido){
 
         var usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
-        var informacionDePagoCargar = document.getElementById("informacionDePagoCargar").value;
+        //var informacionDePagoCargar = document.getElementById("informacionDePagoCargar").value;
 
         var ultimaCarga = new Date(usuarioActivo.ultimaCarga);
         var cargaDia = usuarioActivo.cargaDia;
@@ -749,11 +749,11 @@ function verificarDineroValidoParaCarga(elemMonto, pantallaError){
         var fechaHoy = fechaActual.getFullYear() +""+ (fechaActual.getMonth()+1) +""+ fechaActual.getDate();
         var fechaCarga = ultimaCarga.getFullYear() +""+ (ultimaCarga.getMonth()+1) +""+ ultimaCarga.getDate();
 
-        if(usuarioActivo.usuario == "admin" && informacionDePagoCargar == "admin"){
+        /*if(usuarioActivo.usuario == "admin" && informacionDePagoCargar == "admin"){
             elemMonto.classList.add("displayBackgroundExito");
             exito = true;
 
-        } else {
+        } else {*/
             if(fechaHoy != fechaCarga){
                 if(parseFloat(valorDinero) <= 5000){
                     elemMonto.classList.add("displayBackgroundExito");;
@@ -788,7 +788,7 @@ function verificarDineroValidoParaCarga(elemMonto, pantallaError){
                     pantallaError.innerHTML += "<li>Debe esperar "+horas+":"+minutos+" HS para que se reinicie el límite diario de carga de dinero</li>";
                 }
             }
-        }
+        //}
     }
 
     return exito;
