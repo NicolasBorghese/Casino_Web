@@ -10,9 +10,13 @@
 
 </div>
 
-## Resumen
+<h2>Resumen</h2>
 
-Este proyecto corresponde a mi trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura Universitaria en Desarrollo Web de la UNCO.
+Este proyecto corresponde a mi trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura Universitaria en Desarrollo Web de la UNCO.<br>
+
+Para acceder al sitio sin crear una cuenta nueva:<br>
+<b>Usuario: admin</b><br>
+<b>Contraseña: admin</b>
 
 ### Desarrollado con
 
