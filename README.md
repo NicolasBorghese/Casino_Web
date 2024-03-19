@@ -5,13 +5,13 @@
 
 </div>
 
-<div align="center">
+<div align="center" style="border-radius: 10px; overflow: hidden;">
     <a href="https://nicolasborghese.github.io/Casino_Web/">
         <img src="imagenes/imgGeneral/logo.gif"/>
     </a>
 </div>
 
-<div align="center">
+<div align="center" style="border-radius: 10px; overflow: hidden;">
     <a href="https://nicolasborghese.github.io/Casino_Web/">
         <img src="imagenes/imgGeneral/logoMiniatura.png">
     </a>
