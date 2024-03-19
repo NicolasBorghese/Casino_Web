@@ -1,20 +1,25 @@
 <div align="center">
-    <div>
-        <a href="https://nicolasborghese.github.io/Casino_Web/">
-            <img src="imagenes/imgGeneral/logo02Readme.png">
-        </a>
-    </div>
-    © 2023 Nicolás Borghese
-    
 <h3><a href="https://nicolasborghese.github.io/Casino_Web/">Link a Casino Web</a></h3>
 
+<div>
+    <a href="https://nicolasborghese.github.io/Casino_Web/">
+        <img src="imagenes/imgGeneral/logo02Readme.png">
+    </a>
+</div>
+
+© 2023 Nicolás Borghese
+    
 </div>
 
 ---
 
 <h3>Resumen</h3>
 
-Este proyecto corresponde a mi trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura Universitaria en Desarrollo Web de la UNCO.<br>
+Trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura Universitaria en Desarrollo Web de la Universidad Nacional del Comahue.<br>
+
+- Cuenta con un sistema de creación de cuentas y login para el sitio
+- Utiliza local storage para simular una base de datos
+- Cuenta con un juego de tragamonedas funcional (hay que cargar saldo previamente)
 
 Para acceder al sitio sin crear una cuenta nueva:<br>
 
@@ -32,9 +37,13 @@ Para acceder al sitio sin crear una cuenta nueva:<br>
 - [![JavaScript][javascript-shield]][javascript-url]
 - [![Aseprite][aseprite-shield]][aseprite-url]
 
+---
+
 ### Descripción
 
 El proyecto simula la página web de un casino que cuenta con un login y una sección para crearse una cuenta. Una vez logueado, el usuario accede a un menú que permite elegir entre 3 juegos , una ruleta, un Black Jack y un tragamonedas <b>*(actualmente solo se encuentra finalizado el tragamonedas)*</b> . También cuenta con una barra de navegación que permite dirigirse a distintas secciones y una pequeña sección que muestra el nombre de usuario logueado y el saldo.
+
+---
 
 ### Secciones de la página:
 
@@ -98,5 +107,5 @@ Todos los diseños de animaciones e imágenes se encuentran 100% desarrollados c
 [aseprite-shield]: https://img.shields.io/badge/Aseprite-white?style=for-the-badge&logo=Aseprite
 [aseprite-url]: https://www.aseprite.org/
 
-[linkedin-shield]: https://img.shields.io/badge/Nicol%C3%A1s%20Borghese-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white
-[linkedin-url]: https://www.linkedin.com/in/nicolas-borghese/
+<!--[linkedin-shield]: https://img.shields.io/badge/Nicol%C3%A1s%20Borghese-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white
+[linkedin-url]: https://www.linkedin.com/in/nicolas-borghese/-->
