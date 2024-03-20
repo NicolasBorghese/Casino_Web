@@ -4,7 +4,7 @@
 <div>
     <picture>
         <a href="https://nicolasborghese.github.io/Casino_Web/">
-            <img src="imagenes/imgGeneral/logoCasinoWebReadmeV2.gif"/>
+            <img src="imagenes/imgGeneral/logoCasinoWebReadmeV3.gif"/>
         </a>
     </picture>
 </div>
