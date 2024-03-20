@@ -15,9 +15,9 @@
 
 <h3>Resumen</h3>
 
-Trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura Universitaria en Desarrollo Web de la Universidad Nacional del Comahue.<br><br>
+Trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura Universitaria en Desarrollo Web de la Universidad Nacional del Comahue.<br>
 
-Este proyecto simula la página web de un casino online utilizando únicamente HTML, CSS y JavaScript como tecnologías para desarrollo web<br><br>
+Este proyecto simula la página web de un casino online utilizando únicamente HTML, CSS y JavaScript como tecnologías para desarrollo web.<br>
 
 - Cuenta con un sistema de creación de cuentas y login para el sitio
 - Cuenta con una sección (Perfil) que permite editar algunos datos de la cuenta
