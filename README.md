@@ -7,7 +7,7 @@
     </a>
 </div>
 
-© 2023 Nicolás Borghese
+<br><br>© 2023 Nicolás Borghese
     
 </div>
 
@@ -15,13 +15,17 @@
 
 <h3>Resumen</h3>
 
-Trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura Universitaria en Desarrollo Web de la Universidad Nacional del Comahue.<br>
+Trabajo final para la materia Programación Estática y Laboratorio Web de la Tecnicatura Universitaria en Desarrollo Web de la Universidad Nacional del Comahue.<br><br>
+
+Este proyecto simula la página web de un casino online utilizando únicamente HTML, CSS y JavaScript como tecnologías para desarrollo web<br><br>
 
 - Cuenta con un sistema de creación de cuentas y login para el sitio
+- Cuenta con una sección (Perfil) que permite editar algunos datos de la cuenta
+- Cuenta con un sistema sencillo de carga y retiro de dinero (Cargar/Retirar)
+- Cuenta con un juego de tragamonedas funcional (hay que cargar saldo ficticio previamente para que funcione)
 - Utiliza local storage para simular una base de datos
-- Cuenta con un juego de tragamonedas funcional (hay que cargar saldo previamente)
 
-Para acceder al sitio sin crear una cuenta nueva:<br>
+Para acceder al sitio sin necesidad de crear una cuenta nueva:<br>
 
 <div align="center">
     <b>Usuario: admin</b><br>
@@ -41,7 +45,7 @@ Para acceder al sitio sin crear una cuenta nueva:<br>
 
 ### Descripción
 
-El proyecto simula la página web de un casino que cuenta con un login y una sección para crearse una cuenta. Una vez logueado, el usuario accede a un menú que permite elegir entre 3 juegos , una ruleta, un Black Jack y un tragamonedas <b>*(actualmente solo se encuentra finalizado el tragamonedas)*</b> . También cuenta con una barra de navegación que permite dirigirse a distintas secciones y una pequeña sección que muestra el nombre de usuario logueado y el saldo.
+El proyecto cuenta con un login y una sección para crearse una cuenta. Una vez logueado, el usuario accede a un menú que permite elegir entre 3 juegos , un tragamonedas, una ruleta y un Black Jack <b>*(actualmente solo se encuentra finalizado el tragamonedas)*</b> . También cuenta con una barra de navegación que permite dirigirse a distintas secciones y una pequeña sección que muestra el nombre de usuario logueado y el saldo.
 
 ---
 
@@ -73,14 +77,14 @@ Muestra las reglas de los 3 juegos.
 7. Opciones (opciones.html)<br>
 Permitirá al usuario hacer algunas modificaciones a la página a su gusto.
 
-8. Ruleta (juegoRuleta.html)<br>
+8. Tragamonedas (juegoTragamonedas.html)<br>
+Corresponde al juego del tragamonedas. <b>*(COMPLETO)*</b>
+
+9. Ruleta (juegoRuleta.html)<br>
 Corresponde al juego de la ruleta (en desarrollo)
 
-9. Black Jack (juegoBlackJack.html)<br>
+10. Black Jack (juegoBlackJack.html)<br>
 Corresponde al juego de Black Jack (en desarrollo)
-
-10. Tragamonedas (juegoTragamonedas.html)<br>
-Corresponde al juego del tragamonedas. <b>*(COMPLETO)*</b>
 
 Las funcionalidades del tragamonedas se encuentran 100% desarrolladas con Javascript.<br>
 Todos los diseños de animaciones e imágenes se encuentran 100% desarrollados con Aseprite.

@@ -782,6 +782,10 @@ function verificarDineroValidoParaCarga(elemMonto, pantallaError){
                     var horas = 23 - fechaActual.getHours();
                     var minutos = 60 - fechaActual.getMinutes();
 
+                    if(minutos < 10){
+                        minutos = "0" + minutos;
+                    }
+
                     elemMonto.classList.remove("displayBackgroundExito");
                     elemMonto.classList.add("displayBackgroundError");
                     pantallaError.innerHTML += "<li>El valor ingresado para monto excede su límite diario, por hoy puede cargar $"+margen+"</li>";
