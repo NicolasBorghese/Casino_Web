@@ -1211,11 +1211,36 @@ function restarApuestaTragamonedas(){
 /**
  * juegoTragamonedas.html
 
+ * Precarga en caché todas las imágenes y GIFs del tragamonedas para
+ * evitar el retardo al animar los rodillos y la palanca
+ */
+function precargarImagenesTragamonedas(){
+    var imagenes = [
+        "imagenes/imgJuegoTragamonedas/palancaTirar.gif",
+        "imagenes/imgJuegoTragamonedas/rodillo00Girando.gif"
+    ];
+
+    for (var i = 1; i <= 10; i++){
+        imagenes.push("imagenes/imgJuegoTragamonedas/rodillo" + i + ".png");
+        imagenes.push("imagenes/imgJuegoTragamonedas/rodillo" + i + "Entrando.gif");
+        imagenes.push("imagenes/imgJuegoTragamonedas/rodillo" + i + "Saliendo.gif");
+    }
+
+    imagenes.forEach(function(src){
+        var img = new Image();
+        img.src = src;
+    });
+}
+
+/**
+ * juegoTragamonedas.html
+
  * Función creada principalmente para volver a su estado inicial los display
  * de los rodillos y el valor de la apuesta a 0
  */
 function actualizarJuegoTragamonedas(){
     actualizarDatosCuenta();
+    precargarImagenesTragamonedas();
 
     localStorage.setItem("rodillo1", JSON.stringify(8));
     localStorage.setItem("rodillo2", JSON.stringify(8));
