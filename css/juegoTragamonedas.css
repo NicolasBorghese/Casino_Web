@@ -369,6 +369,43 @@
  * El contenedor base mide 720px × 540px.
  */
 
+/* Reducir márgenes del logo en esta página (40px en style.css son demasiado para una página de juego) */
+#logo {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+/*
+ * En mobile (≤880px): hacer #contenedorGeneral flex column para poder
+ * centrar verticalmente el juego con margin:auto.
+ * Es seguro aquí porque #datosCuenta ya tiene float:none en ese breakpoint.
+ * También se neutraliza el truco left:50%/translateX del logo (fue diseñado
+ * para compensar el float del panel, no para un contexto flex).
+ */
+@media (max-width: 880px) {
+    #contenedorGeneral {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* El truco left:50% desplazaría el logo en flex — reemplazar con align-self */
+    #logo {
+        position: relative;
+        left: 0;
+        transform: none;
+        align-self: center;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    /* Centrado vertical: margin auto distribuye el espacio sobrante arriba y abajo */
+    #contenido {
+        align-self: center;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
 @media (max-width: 820px) {
     #contenido {
         zoom: 0.82;
