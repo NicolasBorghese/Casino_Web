@@ -9,39 +9,36 @@
 }
 
 body {
-    /*Esto garantiza que el tamaño total del elemento será del ancho y alto designados,
-    incluyendo el relleno y el borde.*/
     box-sizing: border-box;
-
     background-color: #38002c;
 
-    /*Por alguna razón si no está el display: block se oculta el scroll lateral*/
-    display:block;
+    /* Sticky footer: body como columna flex */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/*Para que el pie de página quede al fondo*/
-html, body {
-    height: 100%;
+html {
     margin: 0;
 }
 
 /*Para que el pie de página quede al fondo*/
 #contenedorGeneral {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-
-    display:block;
+    /* Ocupa todo el espacio disponible, empuja el footer hacia abajo */
+    flex: 1 0 auto;
+    display: block;
 }
 
 /*----------------------------------------- BANNER -------------------------------------------*/
 /* <div> principal*/
 #banner {
-    
-    height:160px;
+
+    height: clamp(80px, 10vw, 160px);
 
     background-image: url(../imagenes/imgGeneral/banner.gif);
-    background-size:auto;
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    background-position: center top;
 }
 
 /*----------------------------------------- CABEZAL ------------------------------------------*/
@@ -56,6 +53,8 @@ html, body {
     display: flex;
     /*justify-content:space-between para modificar la forma de la disposición de los elementos li */
     justify-content:space-between;
+    flex-wrap: wrap;
+    gap: 6px;
     margin-left: 1%;
     margin-right: 1%;
 }
@@ -82,126 +81,137 @@ html, body {
 }
 
 /*----------------------------------------- DATOS CUENTA -------------------------------------*/
-/* <div> principal*/
+/* <div> principal */
 #datosCuenta {
-    width: 200px;
-    height: auto;
+    width: 210px;
+
     background-color: #2c5b6d;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 5px;
-    /*margin-top: 1%;*/
     border: 10px solid black;
     border-bottom-left-radius: 10px;
-    /*margin-bottom: 20px;*/
 
     position: sticky;
     top: 0;
+    float: right;
+    z-index: 10;
 
-    float:right;
-}
+    padding: 8px 7px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 
-#datosCuenta td{
-    color:#000000;
-}
-
-#datosCuenta #datosCuentaUsuario, #datosCuentaSaldo{
-    font-size: 0.6em;
-    /*margin-right: 20px;*/
-    color: #ffda70;
-    text-align: center;
-}
-
-#usuarioVista{
-    /*width: 100% habilita a cambiar el tamaño del div sin romperse*/
-    width: 100%;
-    height: 2em;
-    /*margin-bottom: 10px;*/
-    margin-bottom: 10px;
-    border: 5px solid #000000;
-    background-color: #fafdff;
-    color: #000000;
-    font-size: 0.7em;
-
-    /*Atributos que se modifican igual en los inputs text se los formularios y demas...*/
-    border-radius: 6px;
-    border: 4px solid;
-
-    text-align: center;
-
-    position:relative;
-
-    /*<!DOCTYPE html> al utilizar esta etiqueta es necesario indicar que los bordes no excedan las cajas */
     box-sizing: border-box;
 }
 
-#simboloPesos {
+/* Cada bloque label + input */
+.datosCuentaFila {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
 
+/* Etiqueta de sección */
+.datosCuentaLabel {
+    font-size: 0.6em;
+    color: #ffda70;
+    text-align: center;
+    display: block;
+    line-height: 1;
+}
+
+/* Fila del saldo: contenedor relativo para posicionar el $ dentro del input */
+.datosCuentaSaldoFila {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+}
+
+/* $ posicionado absolutamente dentro del input */
+#simboloPesos {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 12px;
+    display: flex;
+    align-items: center;
     color: #46c657;
-    display: inline;
-    font-size: 1.1em;
+    font-size: 0.65em;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Inputs de sólo lectura */
+#usuarioVista {
+    width: 100%;
+    background-color: #fafdff;
+    color: #000000;
+    font-size: 0.7em;
+    border-radius: 6px;
+    border: 4px solid;
+    text-align: center;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    min-width: 0;
 }
 
 #saldoVista {
     width: 100%;
-    height: 2em;
-    /*margin-bottom: 10px;*/
-    border: 5px solid #000000;
     background-color: #fafdff;
     color: #000000;
     font-size: 0.7em;
-
-    /*Atributos que se modifican igual en los inputs text se los formularios y demas...*/
     border-radius: 6px;
     border: 4px solid;
-    padding-left: 5px;
-
-    display: inline;
-
-    /*<!DOCTYPE html> al utilizar esta etiqueta es necesario indicar que los bordes no excedan las cajas */
+    /* Deja espacio para el $ a la izquierda */
+    padding: 6px 10px 6px 32px;
     box-sizing: border-box;
+    min-width: 0;
 }
 
+/* Botón cerrar sesión */
 #datosCuenta #botonCerrarSesion {
     width: 100%;
-    height: 2em;
-    margin-top:10px;
-    margin-bottom: 10px;
+    margin-top: 4px;
     border-radius: 8px;
-    background-color:  #222a5c;
-    font-size: 0.8em;
+    border: none;
+    background-color: #222a5c;
+    font-size: 0.62em;
     color: #fafdff;
+    cursor: pointer;
+    padding: 12px 14px;
 }
 
-#datosCuenta #botonCerrarSesion:hover{
+#datosCuenta #botonCerrarSesion:hover {
     background-color: #8babbf;
-    color: #000000
+    color: #000000;
 }
 
 /*----------------------------------------- LOGO ---------------------------------------------*/
 /* <div> principal*/
 #logo {
-    /* especificar las dimensiones del div (height y width) en relación a la imágen de background
-    es aparentemente la forma más precisa de conseguir que el border la rodee */
-    /*height: 80px;
-    width: 300px;*/
-    height:120px;
-    width: 450px;
+    /*
+     * Centrado relativo al viewport completo, ignorando el float del panel.
+     * left: 50%  → mueve el borde izquierdo al centro del bloque contenedor.
+     * translateX(-50%) → lo desplaza hacia atrás el 50% de su propio ancho.
+     * Resultado: el logo queda siempre centrado en pantalla.
+     */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: min(450px, 82%);
+    max-width: 450px;
     margin-top: 40px;
     margin-bottom: 40px;
-    /* margin: auto; centra horizontalmente el contenido del div en el medio */
-    margin-left: auto;
-    margin-right: auto;
-    /*background-image: url(../imagenes/logo.gif);*/
-    background-repeat: no-repeat;
+    margin-left: 0;
+    margin-right: 0;
+
     border-radius: 10px;
-    /*border: 5px solid #ff8426;*/
 }
 
 #logo img{
     height: auto;
     width: 100%;
     border-radius: 10px;
+    display: block;
 }
 
 /*----------------------------------------- CONTENIDO ----------------------------------------*/
@@ -216,19 +226,24 @@ html, body {
 #pieDePagina {
     background-color: #000000;
     font-size: 0.6em;
-    height: 150px;
-    /*margin-top: 1.5em;*/
-    padding-top: 1%;
-    padding-bottom: 10px;
-    
-    /*Para que el pie de página quede al fondo*/
-    margin-top: auto;
+    height: auto;
+    min-height: 100px;
+    padding: 30px 10px 20px;
+
+    /* Flexbox para centrar verticalmente el contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* flex-shrink: 0 evita que se comprima */
+    flex-shrink: 0;
 }
 
 #pieDePagina p {
     color: #fafdff;
     text-align: center;
-    margin-bottom: 120px;
+    margin-bottom: 12px;
     font-size: 1.5em;
 }
 
@@ -255,4 +270,137 @@ html, body {
 
 #pieDePagina ul li a:hover{
     color: #8cffde;
+}
+
+/*========================================= RESPONSIVE =========================================*/
+
+@media (max-width: 900px) {
+    #menuCabezal ul li a {
+        font-size: 0.85em;
+    }
+}
+
+/* ≤880px: panel pasa a barra horizontal, nav se centra */
+@media (max-width: 880px) {
+    #logo {
+        width: min(320px, 75%);
+        margin-top: 20px;
+        margin-bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Nav centrado: los links que wrapeen quedan centrados
+       en lugar de quedar solos pegados a la izquierda */
+    #menuCabezal ul {
+        justify-content: center;
+        gap: 8px 18px;
+    }
+
+    #menuCabezal ul li a {
+        font-size: 0.7em;
+    }
+
+    /* Panel: tres bloques de ancho fijo distribuidos a lo ancho.
+       Usar "auto auto auto" + justify-content:space-between evita que
+       los inputs se estiren de forma irregular. */
+    #datosCuenta {
+        float: none;
+        width: 100%;
+        position: static;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-radius: 0 0 10px 10px;
+
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 16px;
+        gap: 0;
+    }
+
+    /* Cada bloque: etiqueta encima, input abajo */
+    .datosCuentaFila {
+        flex-direction: column;
+        gap: 3px;
+        align-items: flex-start;
+    }
+
+    .datosCuentaLabel {
+        font-size: 0.47em;
+        text-align: left;
+    }
+
+    /* Anchos fijos: dan consistencia visual */
+    #usuarioVista {
+        width: 130px;
+        font-size: 0.52em;
+        text-align: left;
+        padding: 5px 6px 5px 8px;
+    }
+
+    #saldoVista {
+        width: 100px;
+        font-size: 0.52em;
+        padding: 5px 6px 5px 24px;
+    }
+
+    #simboloPesos {
+        font-size: 0.52em;
+        left: 8px;
+    }
+
+    #datosCuenta #botonCerrarSesion {
+        width: auto;
+        white-space: nowrap;
+        padding: 9px 14px;
+        font-size: 0.52em;
+        margin: 0;
+        align-self: center;
+    }
+}
+
+/* ≤480px: reduce tamaños manteniendo la misma estructura de 3 bloques */
+@media (max-width: 480px) {
+    #logo {
+        width: min(200px, 80%);
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    #menuCabezal ul li a {
+        font-size: 0.5em;
+    }
+
+    #menuCabezal {
+        padding: 10px 6px;
+    }
+
+    #datosCuenta {
+        padding: 8px 10px;
+    }
+
+    #usuarioVista {
+        width: 95px;
+        font-size: 0.46em;
+        padding: 4px 6px 4px 6px;
+    }
+
+    #saldoVista {
+        width: 72px;
+        font-size: 0.46em;
+        padding: 4px 6px 4px 20px;
+    }
+
+    #simboloPesos {
+        font-size: 0.46em;
+        left: 7px;
+    }
+
+    #datosCuenta #botonCerrarSesion {
+        font-size: 0.44em;
+        padding: 8px 8px;
+    }
 }

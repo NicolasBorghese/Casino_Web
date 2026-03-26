@@ -1,18 +1,20 @@
 /*-------------------------------------------- contenidoReglas -------------------------------------*/
 .contenedorReglas {
-    margin-left: 10%;
-    margin-right: 10%;
+    max-width: 920px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 40px;
     margin-bottom: 40px;
 
     background-color: #2c5b6d;
 
-    /* Ingresando una cantidad de pixeles no se deforma el borde a diferencia de ingresar porcentaje*/
     border-radius: 20px;
     border:15px solid black;
 
     padding: 25px;
     clear: both;
+    box-sizing: border-box;
 }
 
 /*.contenedorReglas p{
@@ -35,4 +37,16 @@
 
 .contenedorReglas li{
     margin-bottom: 10px;
+}
+
+/*========================================= RESPONSIVE =========================================*/
+
+@media (max-width: 560px) {
+    .tituloReglas {
+        font-size: 1em;
+    }
+
+    .contenedorReglas dt {
+        font-size: 0.85em;
+    }
 }

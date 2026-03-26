@@ -3,6 +3,7 @@
 
 <head>
     <title>Casino Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- inserción de icono miniatura de la página web -->
     <link rel="icon" type="image/x-icon" href="imagenes/imgGeneral/iconMiniatura.svg">
@@ -42,37 +43,18 @@
         
         <!-- ____________________________________ DATOS CUENTA _____________________________________ -->
         <div id="datosCuenta">
-            <table>
-
-                <tr>
-                    <td colspan="2">
-                        <p id="datosCuentaUsuario">Usuario</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="text" id="usuarioVista" class="datosCuentaVista" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <p id="datosCuentaSaldo">Saldo</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p id="simboloPesos">$</p>
-                    </td>
-                    <td>
-                        <input type="text" id="saldoVista" class="datosCuentaVista" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="button" id="botonCerrarSesion" value="Cerrar Sesi&oacute;n" onclick="cerrarSesion();">
-                    </td>
-                </tr>
-            </table>
+            <div class="datosCuentaFila">
+                <span class="datosCuentaLabel">Usuario</span>
+                <input type="text" id="usuarioVista" class="datosCuentaVista" readonly>
+            </div>
+            <div class="datosCuentaFila">
+                <span class="datosCuentaLabel">Saldo</span>
+                <div class="datosCuentaSaldoFila">
+                    <span id="simboloPesos">$</span>
+                    <input type="text" id="saldoVista" class="datosCuentaVista" readonly>
+                </div>
+            </div>
+            <input type="button" id="botonCerrarSesion" value="Cerrar Sesi&oacute;n" onclick="cerrarSesion();">
         </div>
         
         <!-- ____________________________________ LOGO _____________________________________________ -->

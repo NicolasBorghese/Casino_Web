@@ -1,23 +1,26 @@
 /*----------------------------------------- contenedorJuegos ---------------------------------*/
 /* <div> principal y compartido*/
 #contenido {
-    justify-content:space-around;
+    justify-content: center;
 
-    /*Para que lo elementos se puedan acomodar uno al lado del otro con float*/
+    /*Para que lo elementos se puedan acomodar uno al lado del otro con flex*/
     display: flex;
-    
-    margin-left: 20%;
-    margin-right: 20%;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    max-width: 860px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 
     margin-bottom: 40px;
+    padding: 10px 0;
 }
 
 #contenido .divsJuegos {
-
-    width:200px;
+    width: clamp(150px, 22vw, 220px);
     height: auto;
     border-radius: 10px;
-    float:left;
 }
 
 /*#contenido .divsJuegos a {

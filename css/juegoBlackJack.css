@@ -1,16 +1,22 @@
 #contenido {
-    margin:auto;
-    height: 240px;
-    width: 640px;
+    margin: 0 auto 40px;
+    height: auto;
+    min-height: 200px;
+    max-width: 640px;
+    width: 90%;
     border: 10px solid black;
     border-radius: 10px;
     display: flex;
-    margin-bottom: 40px;
     background-color: #2c5b6d;
-    clear:both;
+    clear: both;
+    box-sizing: border-box;
+    padding: 20px;
 }
 
 #contenido h1{
     margin: auto;
     color: #ffda70;
+    font-size: clamp(0.7rem, 4vw, 1.5rem);
+    text-align: center;
+    word-break: break-word;
 }
